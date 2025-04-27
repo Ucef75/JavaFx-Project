@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@loginview.css">
+
+    <!-- Left side with Image and Title -->
+    <VBox alignment="CENTER" spacing="20" styleClass="left-panel" BorderPane.alignment="CENTER_LEFT">
+        <ImageView fx:id="appImage" fitWidth="300" fitHeight="300"/>
+        <Text text="Gamers Corner" styleClass="app-title"/>
+    </VBox>
+
+    <!-- Right side with Login Form -->
+    <VBox alignment="CENTER" spacing="20" styleClass="right-panel" BorderPane.alignment="CENTER_RIGHT">
+        
+        <!-- Welcome Text -->
+        <Text text="Welcome Back!" styleClass="welcome-text"/>
+
+        <!-- Login Form Fields -->
+        <VBox alignment="CENTER" spacing="10">
+            <TextField fx:id="usernameField" promptText="Username" styleClass="input-field"/>
+            <PasswordField fx:id="passwordField" promptText="Password" styleClass="input-field"/>
+            <TextField fx:id="countryField" promptText="Country" styleClass="input-field"/>
+            <TextField fx:id="ageField" promptText="Age" styleClass="input-field"/>
+
+            <Button text="Log In" onAction="#handleLogin" styleClass="login-button"/>
+            <Label fx:id="errorLabel" styleClass="error-label"/>
+        </VBox>
+
+        <!-- Sign Up Link -->
+        <HBox alignment="CENTER" spacing="5">
+            <Label text="Don't have an account?" styleClass="sign-up-text"/>
+            <Button text="Sign Up" onAction="#handleSignUp" styleClass="sign-up-button"/>
+        </HBox>
+    </VBox>
+
+</BorderPane>
