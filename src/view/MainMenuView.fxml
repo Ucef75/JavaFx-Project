@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@../css/interface.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainMenuController">
+
+    <!-- Top: Pixely Header -->
+    <top>
+        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="831.0" style="-fx-background-color: #2d2d2d; -fx-padding: 20;">
+            <Label style="-fx-text-fill: #ff6600; -fx-font-size: 36px; -fx-font-weight: bold;" text="PIXELY" />
+        </HBox>
+    </top>
+
+    <!-- Center: Game Grid Placeholder -->
+    <center>
+        <ScrollPane fitToWidth="true">
+            <GridPane alignment="CENTER" hgap="20" prefHeight="178.0" prefWidth="762.0" style="-fx-padding: 30;" vgap="20">
+                <!-- This is where your game tiles would go -->
+                <Label style="-fx-text-fill: white; -fx-font-size: 24px;" text="Your Games Will Appear Here" />
+            <columnConstraints>
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+        </ScrollPane>
+    </center>
+
+    <!-- Bottom: Button Bar and Copyright -->
+    <bottom>
+        <VBox alignment="CENTER" spacing="10">
+            <!-- Four Equal Width Buttons -->
+            <HBox alignment="CENTER" spacing="10">
+                <Button fx:id="profileButton" prefHeight="40" prefWidth="150" text="Profile" />
+                <Button fx:id="settingsButton" prefHeight="40" prefWidth="150" text="Settings" />
+                <Button fx:id="logoutButton" prefHeight="40" prefWidth="150" text="Logout" />
+                <Button fx:id="exitButton" prefHeight="40" prefWidth="150" text="Exit" />
+            </HBox>
+            
+            <!-- Copyright Notice -->
+            <Label style="-fx-text-fill: #aaaaaa; -fx-font-size: 12px;" text="© 2025 Pixely Games. All Rights Reserved." />
+        </VBox>
+    </bottom>
+
+</BorderPane>

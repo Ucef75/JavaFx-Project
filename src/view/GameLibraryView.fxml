@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="application.GameLibraryController"
+      stylesheets="@../css/interface.css">
+    
+    <HBox styleClass="header">
+        <Label text="Game Library" styleClass="title"/>
+        <Button text="Back to Menu" onAction="#handleBackToMenu" styleClass="back-button"/>
+    </HBox>
+    
+    <ListView fx:id="gamesListView" styleClass="game-list">
+        <!-- List cells will be populated programmatically -->
+    </ListView>
+    
+    <HBox styleClass="footer">
+        <Button text="Launch Game" onAction="#handleGameLaunch" styleClass="action-button"/>
+    </HBox>
+    
+</VBox>

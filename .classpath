@@ -12,5 +12,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Javafx"/>
+	<classpathentry kind="lib" path="C:/Users/takil/OneDrive/Desktop/java/lib/sqlite-jdbc-3.49.1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

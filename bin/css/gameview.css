@@ -1,0 +1,45 @@
+/* Add to your existing CSS or create new file */
+.game-list {
+    -fx-background-color: #2d2d2d;
+    -fx-border-color: #444;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+.game-list .list-cell {
+    -fx-background-color: #3d3d3d;
+    -fx-border-color: #444;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 10;
+}
+
+.game-list .list-cell:filled:hover {
+    -fx-background-color: #4d4d4d;
+}
+
+.game-list .list-cell:filled:selected {
+    -fx-background-color: #0066cc;
+}
+
+.game-card {
+    -fx-spacing: 10;
+    -fx-padding: 10;
+}
+
+.game-icon {
+    -fx-fit-width: 64;
+    -fx-fit-height: 64;
+}
+
+.game-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.game-description {
+    -fx-font-size: 12px;
+    -fx-text-fill: #aaa;
+    -fx-wrap-text: true;
+}

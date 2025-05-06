@@ -1,7 +1,7 @@
 package ui;
 
-import game.Dungeon;
-import game.Player;
+import games.Dungeon;
+import games.Player;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

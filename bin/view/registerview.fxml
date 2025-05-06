@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane stylesheets="@../css/registerview.css" xmlns="http://javafx.com/javafx/23.0.1" 
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegisterController">
+    <!-- Top section with logo and title -->
+    <top>
+        <VBox alignment="CENTER" spacing="5" styleClass="header-section">
+            <Text styleClass="title-text" text="Pixely" />
+        </VBox>
+    </top>
+
+    <!-- Center section with registration form -->
+    <center>
+        <StackPane>
+            <VBox alignment="CENTER" styleClass="register-form">
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333; -fx-padding: 0 0 15 0;" text="Create your account" />
+                
+                <!-- Username Field -->
+                <VBox styleClass="form-field">
+                    <Label styleClass="form-label" text="Username" />
+                    <TextField fx:id="usernameField" promptText="Choose a username" />
+                </VBox>
+                
+                <!-- Password Field -->
+                <VBox styleClass="form-field">
+                    <Label styleClass="form-label" text="Password" />
+                    <PasswordField fx:id="passwordField" promptText="Create a password" />
+                    <Label fx:id="passwordStrengthLabel" styleClass="password-strength" text="" />
+                </VBox>
+                
+                <!-- Confirm Password Field -->
+                <VBox styleClass="form-field">
+                    <Label styleClass="form-label" text="Confirm Password" />
+                    <PasswordField fx:id="confirmPasswordField" promptText="Re-enter your password" />
+                </VBox>
+                
+                <!-- Country Selection -->
+                <VBox styleClass="form-field">
+                    <Label styleClass="form-label" text="Country" />
+                    <ComboBox fx:id="countryComboBox" promptText="Select your country" />
+                </VBox>
+                
+                <!-- Date of Birth -->
+                <VBox styleClass="form-field">
+                    <Label styleClass="form-label" text="Date of Birth" />
+                    <DatePicker fx:id="birthDatePicker" promptText="Select your birth date" />
+                </VBox>
+                
+                <!-- Register Button -->
+                <Button fx:id="registerButton" defaultButton="true" styleClass="register-button" text="Register" />
+            </VBox>
+        </StackPane>
+    </center>
+
+    <!-- Bottom section with login option -->
+    <bottom>
+        <VBox alignment="CENTER" styleClass="bottom-section">
+            <HBox alignment="CENTER" spacing="5">
+                <Label text="Already have an account?" />
+                <Button fx:id="loginButton" styleClass="login-button" text="Login" />
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
