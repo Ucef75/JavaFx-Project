@@ -6,6 +6,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.skin.TextInputControlSkin.Direction;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -30,7 +31,6 @@ public class Snake extends Application {
     private Timeline timeline;
     private MainMenu mainMenu;
     private boolean gamePaused = false;
-    private Timeline timeline;
 
     @Override
     public void start(Stage primaryStage) {
