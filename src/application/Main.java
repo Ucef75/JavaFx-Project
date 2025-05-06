@@ -1,3 +1,8 @@
+/** Project: Pixely - Game Platform
+File: Main.java
+Package: application
+* @author Youssef Ben Abid
+ */
 package application;
 
 import java.sql.Driver;
