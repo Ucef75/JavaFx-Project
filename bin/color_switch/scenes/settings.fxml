@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" minHeight="1024" minWidth="768" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="Controller">
+   <top>
+      <BorderPane>
+         <left>
+            <Pane styleClass="small-on-hover" onMouseClicked="#backToHome" prefHeight="101.0" prefWidth="94.0" BorderPane.alignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <Circle fill="white" layoutX="48.0" layoutY="53.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="back-button" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="19.0" BorderPane.alignment="CENTER" />
+               <ImageView fitHeight="54.0" fitWidth="59.0" layoutX="18.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER">
+                  <Image url="@../assets/back.png" />
+               </ImageView>
+            </Pane>
+         </left>
+         <center>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-text" text="SETTINGS" BorderPane.alignment="CENTER" />
+         </center>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="50.0" right="50.0" top="50.0" />
+         </padding>
+      </BorderPane>
+   </top>
+   <center>
+      <GridPane alignment="center" hgap="30" vgap="75" xmlns:fx="http://javafx.com/fxml">
+         <padding><Insets bottom="25" left="25" right="25" top="25" /></padding>
+
+         <ImageView fitHeight="75.0" fitWidth="75.0" styleClass="settings-icon" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Image url="@../assets/settings/diskette.png" />
+         </ImageView>
+         <ToggleButton fx:id="autosave_btn" onMouseClicked="#toggleAutoSave" styleClass="settings-button" text="ENABLE AUTO SAVE" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+         <ImageView fitHeight="75.0" fitWidth="75.0" styleClass="settings-icon" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Image url="@../assets/settings/music.png" />
+         </ImageView>
+         <ToggleButton fx:id="play_bgmusic_btn" onMouseClicked="#playBgMusic" styleClass="settings-button" text="PLAY MUSIC" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+         <ImageView fitHeight="75.0" fitWidth="75.0" styleClass="settings-icon" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Image url="@../assets/settings/volume.png" />
+         </ImageView>
+         <ToggleButton fx:id="play_sounds_btn" onMouseClicked="#playSounds" styleClass="settings-button" text="PLAY SOUNDS" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+   </center>
+   <stylesheets>
+      <URL value="@../style/style.css" />
+   </stylesheets>
+</BorderPane>
