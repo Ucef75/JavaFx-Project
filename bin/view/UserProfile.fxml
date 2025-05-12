@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserProfileController">
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: #2C3E50; -fx-padding: 10;">
+            <Label fx:id="usernameLabel" text="Username's Profile" style="-fx-font-size: 24; -fx-text-fill: white; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20" />
+            </padding>
+
+            <HBox spacing="20" alignment="CENTER">
+                <ImageView fx:id="userAvatar" fitWidth="150" fitHeight="150" preserveRatio="true" />
+
+                <VBox spacing="10">
+                    <Label fx:id="userFullName" text="Player Name" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                    <HBox spacing="5">
+                        <Label text="Member since:" />
+                        <Label fx:id="joinDateLabel" text="01-01-2025" />
+                    </HBox>
+                    <HBox spacing="5">
+                        <Label text="Country:" />
+                        <Label fx:id="countryLabel" text="United States" />
+                    </HBox>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="editProfileButton" text="Edit Profile" onAction="#editProfile" style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
+                <Button fx:id="closeButton" text="Close" onAction="#closeProfile" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameDetailController">
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: #2C3E50; -fx-padding: 10;">
+            <Label fx:id="gameTitle" text="Game Name" style="-fx-font-size: 24; -fx-text-fill: white; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20" />
+            </padding>
+
+            <ImageView fx:id="gameImage" fitWidth="400" fitHeight="300" preserveRatio="true" />
+
+            <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+                <VBox spacing="10">
+                    <Label text="Description:" style="-fx-font-weight: bold;" />
+                    <Label fx:id="gameDescription" wrapText="true" />
+
+                    <Label text="How to Play:" style="-fx-font-weight: bold;" />
+                    <Label fx:id="gameInstructions" wrapText="true" />
+
+                    <Label text="High Scores:" style="-fx-font-weight: bold;" />
+                    <TableView fx:id="highScoresTable">
+                        <columns>
+                            <TableColumn fx:id="rankColumn" text="Rank" />
+                            <TableColumn fx:id="playerColumn" text="Player" />
+                            <TableColumn fx:id="scoreColumn" text="Score" />
+                            <TableColumn fx:id="dateColumn" text="Date" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </ScrollPane>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="playButton" text="Play Game" onAction="#playGame" style="-fx-background-color: #2ECC71; -fx-text-fill: white;" />
+                <Button fx:id="backButton" text="Back to Games" onAction="#backToGames" style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

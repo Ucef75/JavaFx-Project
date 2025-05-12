@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class Database {
     // Database file path - will be created in the working directory
     private static final String URL = "jdbc:sqlite:database.db";
-    
+
     // Static block to ensure driver is loaded at class loading time
     static {
         try {
@@ -23,12 +23,12 @@ public class Database {
     }
 
     public static void initializeDB() {
-        try (Connection conn = connect(); 
+        try (Connection conn = connect();
              Statement stmt = conn.createStatement()) {
-            
+
             // Enable foreign key constraints
             stmt.execute("PRAGMA foreign_keys = ON");
-            
+
             // Create Users Table
             String createUsersTable = """
                 CREATE TABLE IF NOT EXISTS Users (
@@ -83,15 +83,14 @@ public class Database {
 
     private static void insertDefaultGames() {
         String[] games = {
-            "Catch the treasure", "8024", "Pacman", "Snake",
-            "X/O", "Space AIRCRAFT", "Connect 4"
+            "Bomberman","BrickBreaker","Catch","Dungeon","FlappyBird","Game2048","Pong","Snake","The Circles","Asteroid","Pacman"
         };
 
         String sql = "INSERT OR IGNORE INTO Games (game_name) VALUES (?)";
 
-        try (Connection conn = connect(); 
+        try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            
+
             for (String game : games) {
                 pstmt.setString(1, game);
                 pstmt.executeUpdate();
@@ -116,9 +115,9 @@ public class Database {
     public static boolean registerUser(String username, String password, String country, String birthDate) {
         String sql = "INSERT INTO Users (username, password, country, birth_date) VALUES (?, ?, ?, ?)";
 
-        try (Connection conn = connect(); 
+        try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            
+
             pstmt.setString(1, username);
             pstmt.setString(2, password);
             pstmt.setString(3, country);

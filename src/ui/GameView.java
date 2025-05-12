@@ -1,7 +1,6 @@
 package ui;
 
 import games.Dungeon;
-import games.Player;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -15,11 +14,9 @@ public class GameView {
     private Canvas canvas;
     private Scene scene;
     private Dungeon dungeon;
-    private Player player;
 
-    public GameView(Dungeon dungeon, Player player) {
+    public GameView(Dungeon dungeon) {
         this.dungeon = dungeon;
-        this.player = player;
         this.canvas = new Canvas(dungeon.getWidth() * TILE_SIZE, dungeon.getHeight() * TILE_SIZE + 40);
         this.scene = new Scene(new StackPane(canvas));
     }
@@ -38,9 +35,9 @@ public class GameView {
         gc.setFill(Color.WHITE);
         gc.setFont(new Font(16));
         gc.setTextAlign(TextAlignment.LEFT);
-        gc.fillText("Health: " + player.getHealth(), 10, 25);
+        gc.fillText("Health: " + dungeon.getHealth(), 10, 25);
         gc.setTextAlign(TextAlignment.RIGHT);
-        gc.fillText("Score: " + player.getScore(), canvas.getWidth() - 10, 25);
+        gc.fillText("Score: " + dungeon.getScore(), canvas.getWidth() - 10, 25);
 
         // Draw dungeon
         for (int x = 0; x < dungeon.getWidth(); x++) {
@@ -66,8 +63,9 @@ public class GameView {
 
         // Draw player
         gc.setFill(Color.BLUE);
-        gc.fillOval(player.getX() * TILE_SIZE, player.getY() * TILE_SIZE + 40, TILE_SIZE, TILE_SIZE);
+        gc.fillOval(dungeon.getPlayerX() * TILE_SIZE, dungeon.getPlayerY() * TILE_SIZE + 40, TILE_SIZE, TILE_SIZE);
     }
+
     public Canvas getCanvas() {
         return canvas;
     }
@@ -81,7 +79,7 @@ public class GameView {
         gc.setTextAlign(TextAlignment.CENTER);
         gc.fillText("GAME OVER", canvas.getWidth() / 2, canvas.getHeight() / 2);
         gc.setFont(new Font(20));
-        gc.fillText("Final Score: " + player.getScore(), canvas.getWidth() / 2, canvas.getHeight() / 2 + 40);
+        gc.fillText("Final Score: " + dungeon.getScore(), canvas.getWidth() / 2, canvas.getHeight() / 2 + 40);
     }
 
     public void showVictory() {
@@ -93,6 +91,6 @@ public class GameView {
         gc.setTextAlign(TextAlignment.CENTER);
         gc.fillText("VICTORY!", canvas.getWidth() / 2, canvas.getHeight() / 2);
         gc.setFont(new Font(20));
-        gc.fillText("Final Score: " + player.getScore(), canvas.getWidth() / 2, canvas.getHeight() / 2 + 40);
+        gc.fillText("Final Score: " + dungeon.getScore(), canvas.getWidth() / 2, canvas.getHeight() / 2 + 40);
     }
 }

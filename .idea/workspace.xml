@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="df4fd898-6ff3-4a7a-999a-31d6da3956ca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/GameDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/LeaderboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/LeaderboardEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/PixelyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/SettingsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/UserActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/UserProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Score.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/GameLibrary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/GameDetail.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/Leaderboard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/PixelySettings.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/UserProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteriod_Atari_Game" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Color-Switch-Game" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/GameMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/GameMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/SceneManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/StartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/StartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/asteroid/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/asteroid/Asteroid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/asteroid/AsteroidApplication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/asteroid/AsteroidApplication$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/asteroid/AsteroidApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/asteroid/AsteroidApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/asteroid/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/asteroid/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/asteroid/PolygonFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/asteroid/PolygonFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/asteroid/Projectiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/asteroid/Projectiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/asteroid/Ship.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/asteroid/Ship.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/animated-star.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/color-switch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/game/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/game/star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/game/tap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/home/circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/home/gear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/home/instagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/home/question-sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/home/trophy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/love.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/play-button-arrowhead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/rating-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/score-trophy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/settings/diskette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/settings/music.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/settings/volume.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/achat.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/bgMusic.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/breakball1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/bulle.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/button.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/colorswitch.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/dead.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/deadclock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/error.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/inprogress.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/jump.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/star.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/start.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/tapclock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/tic.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/victory.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/sounds/wheel.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/assets/stars-earned.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/elements/Ball.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/elements/Star.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/elements/controllers/BallController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/elements/controllers/BallController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/elements/controllers/StarController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/elements/fxml/ColorSwitchLogo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/elements/fxml/ball.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/elements/fxml/colourSwitcher.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/elements/fxml/hand.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/elements/fxml/star.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/fonts/Dyuthi-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/fonts/Dyuthi.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/fonts/nunito_black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/global/Collideable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/global/GameObjects.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/global/SuperController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/color_switch/obstacles/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/CircleFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/color_switch/obstacles/CircleFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/DoubleCircle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/color_switch/obstacles/DoubleCircle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/DoubleCircleVertical.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/color_switch/obstacles/DoubleCircleVertical.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/color_switch/obstacles/Square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/TestObstacle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/color_switch/obstacles/TestObstacle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/Triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/color_switch/obstacles/Triangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/controllers/DoubleCircleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/controllers/PlusController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/fxml/circle.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/fxml/circleFlow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/fxml/doubleCircle.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/fxml/doubleCircleVertical.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/fxml/plus.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/fxml/square.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/obstacles/fxml/triangle.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/scenes/about_game.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/scenes/game.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/scenes/game_over.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/scenes/home.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/scenes/load_game.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/scenes/produced.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/scenes/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/scenes/settings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/scenes/stats.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/scenes/user_login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/color_switch/style/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Bomberman.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Bomberman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/BrickBreaker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/BrickBreaker$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/BrickBreaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/BrickBreaker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Catch.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Catch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/FlappyBird$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/FlappyBird$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/FlappyBird.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/FlappyBird.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Game2048.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Game2048.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Dungeon.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Dungeon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$GameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Pong$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Pong$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Pong.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Pong.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Snake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/TheCircles$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/TheCircles$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/TheCircles.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/TheCircles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/globalFunc/Sound_Func.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/globalFunc/Sound_Func.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/GameMetadata.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/GameMetadata.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pacman/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pacman/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pacman/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pacman/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pacman/PacManModel$CellValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pacman/PacManModel$CellValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pacman/PacManModel$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pacman/PacManModel$Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pacman/PacManModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pacman/PacManModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pacman/PacManView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pacman/PacManView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pacman/PacmanApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pacman/PacmanApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ui/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ui/GameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ui/HUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ui/HUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ui/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ui/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/utils/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.fxbuild" beforeDir="false" afterPath="$PROJECT_DIR$/build.fxbuild" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/GameController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/GameTester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/animated-star.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/color-switch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/game/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/game/star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/game/tap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/home/circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/home/gear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/home/instagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/home/question-sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/home/trophy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/love.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/play-button-arrowhead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/rating-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/score-trophy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/settings/diskette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/settings/music.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/settings/volume.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/achat.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/bgMusic.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/breakball1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/bulle.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/button.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/colorswitch.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/dead.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/deadclock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/error.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/inprogress.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/jump.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/star.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/start.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/tapclock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/tic.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/victory.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/sounds/wheel.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/assets/stars-earned.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/Ball.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/ColorSwitcherLogo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/ColourSwitcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/Hand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/Star.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/controllers/BallController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/controllers/ColorSwitchLogoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/controllers/ColourSwitcherController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/controllers/StarController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/fxml/ColorSwitchLogo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/fxml/ball.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/fxml/colourSwitcher.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/fxml/hand.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/elements/fxml/star.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/fonts/Dyuthi-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/fonts/Dyuthi.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/fonts/nunito_black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/global/Collideable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/global/DuplicateUsernameException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/global/GameNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/global/GameObjects.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/global/InvalidCredentialsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/global/SuperController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/CircleFlow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/DoubleCircle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/DoubleCircleVertical.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/Obstacle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/Plus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/Square.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/TestObstacle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/Triangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/controllers/CircleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/controllers/CircleFlowController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/controllers/DoubleCircleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/controllers/DoubleCircleVerticalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/controllers/PlusController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/controllers/SquareController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/controllers/TriangleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/fxml/circle.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/fxml/circleFlow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/fxml/doubleCircle.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/fxml/doubleCircleVertical.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/fxml/plus.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/fxml/square.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/obstacles/fxml/triangle.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/scenes/about_game.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/scenes/game.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/scenes/game_over.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/scenes/home.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/scenes/load_game.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/scenes/produced.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/scenes/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/scenes/settings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/scenes/stats.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/scenes/user_login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color_switch/style/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Database.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="$PROJECT_DIR$/../../../../../../../wamp64/bin/php/php7.4.33/php.exe" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2wzuMbZDqSJzZk39gQnPkyOMRxJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pathVariables",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\takil\OneDrive\Desktop\java\Project_Workspace\TP\bin\games" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="application.Main" />
+      <module name="TP" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\takil\OneDrive\Desktop\java\javasdk\javafx-sdk-24\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df4fd898-6ff3-4a7a-999a-31d6da3956ca" name="Changes" comment="" />
+      <created>1747056691770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747056691770</updated>
+      <workItem from="1747056692883" duration="16978000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

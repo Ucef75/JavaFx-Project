@@ -87,7 +87,7 @@ public class LoginController implements Initializable {
     private void switchToSignup() {
         // Implement navigation to signup screen
         try {
-            SceneManager.switchToScene("registerview.fxml");
+            SceneManager.switchToScene("/view/registerview.fxml");
         } catch (Exception e) {
             showError("Could not load registration screen");
             e.printStackTrace();
@@ -97,7 +97,7 @@ public class LoginController implements Initializable {
     private void navigateToMainApp() {
         // Implement navigation to main application
         try {
-            SceneManager.switchToScene("mainview.fxml");
+            SceneManager.switchToScene("/mainview.fxml");
         } catch (Exception e) {
             showError("Could not load application");
             e.printStackTrace();
