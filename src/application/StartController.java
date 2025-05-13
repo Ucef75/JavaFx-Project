@@ -5,16 +5,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class StartController {
-    
+    @FXML
+    private ImageView logoImage;
+
     @FXML
     private Button loginButton;
 
     @FXML
     private Button signupButton;
-    
+
     @FXML
     private Button exitButton;
 

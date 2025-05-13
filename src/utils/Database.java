@@ -3,8 +3,11 @@ package utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Database {
     // Database file path - will be created in the working directory
@@ -51,25 +54,9 @@ public class Database {
                 );
             """;
 
-            // Create UserScores Table
-            String createUserScoresTable = """
-                CREATE TABLE IF NOT EXISTS UserScores (
-                    user_score_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    user_id INTEGER NOT NULL,
-                    game_id INTEGER NOT NULL,
-                    score INTEGER DEFAULT 0,
-                    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
-                    FOREIGN KEY (game_id) REFERENCES Games(game_id) ON DELETE CASCADE,
-                    UNIQUE (user_id, game_id)
-                );
-            """;
-
             // Execute table creation statements
             stmt.execute(createUsersTable);
             stmt.execute(createGamesTable);
-            stmt.execute(createUserScoresTable);
-
             // Insert default games
             insertDefaultGames();
 
@@ -83,7 +70,7 @@ public class Database {
 
     private static void insertDefaultGames() {
         String[] games = {
-            "Bomberman","BrickBreaker","Catch","Dungeon","FlappyBird","Game2048","Pong","Snake","The Circles","Asteroid","Pacman"
+                "Bomberman","BrickBreaker","Catch","Dungeon","FlappyBird","Game2048","Pong","Snake","The Circles","Asteroid","Pacman"
         };
 
         String sql = "INSERT OR IGNORE INTO Games (game_name) VALUES (?)";
@@ -130,7 +117,31 @@ public class Database {
         }
     }
 
-    // Additional utility method to check if driver is available
+    public static Map<String, Object> loadUserByUsername(String username) {
+        String sql = "SELECT user_id, username, country, birth_date, created_at FROM Users WHERE username = ?";
+        Map<String, Object> userData = new HashMap<>();
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, username);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                userData.put("user_id", rs.getInt("user_id"));
+                userData.put("username", rs.getString("username"));
+                userData.put("country", rs.getString("country"));
+                userData.put("birth_date", rs.getString("birth_date"));
+                userData.put("created_at", rs.getString("created_at"));
+            }
+        } catch (SQLException e) {
+            System.err.println("Error loading user: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return userData.isEmpty() ? null : userData;
+    }
+
     public static boolean isDriverAvailable() {
         try {
             Class.forName("org.sqlite.JDBC");

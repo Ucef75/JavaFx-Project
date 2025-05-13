@@ -66,7 +66,7 @@ public class SettingsController {
         countryField.setText(user.getCountry());
 
         try {
-            LocalDate birthDate = LocalDate.parse(user.getBirthDate(), formatter);
+            LocalDate birthDate = LocalDate.parse(user.getBirthdate(), formatter);
             birthDatePicker.setValue(birthDate);
         } catch (Exception e) {
             System.err.println("Error parsing birth date: " + e.getMessage());

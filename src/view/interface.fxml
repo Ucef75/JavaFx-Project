@@ -10,6 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 <StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StartController">
+
     <!-- Background Image -->
     <ImageView>
         <image>
@@ -19,28 +20,31 @@
 
     <!-- Main Content -->
     <VBox fx:id="mainContainer" alignment="CENTER" spacing="20" styleClass="main-container">
+
         <Text fx:id="titleText" fill="RED" styleClass="title-text" text="Welcome to Pixely!">
             <font>
                 <Font name="Forte" size="48.0" />
             </font>
         </Text>
-        
+
         <VBox fx:id="imageContainer" alignment="CENTER" spacing="10" styleClass="image-container">
-            <Text fx:id="imageCaption" fill="WHITE" styleClass="image-caption" text="A Game Platform of Pixels">
+            <Text fx:id="imageCaption" fill="WHITE" styleClass="image-caption" text="Your Retro Gaming Hub">
                 <font>
                     <Font size="18.0" />
                 </font>
             </Text>
         </VBox>
 
-        <Text fx:id="descriptionText" fill="WHITE" styleClass="description-text" text="Pixely is a game platform that brings back the real deal man" textAlignment="CENTER" wrappingWidth="400">
+        <Text fx:id="descriptionText" fill="WHITE" styleClass="description-text"
+              text="Experience classic pixel games with modern flair - where nostalgia meets new adventures!"
+              textAlignment="CENTER" wrappingWidth="400">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
 
         <HBox fx:id="buttonContainer" alignment="CENTER" spacing="20" styleClass="button-container">
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up or Login To Start playing NOW !">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up or Login To Start Playing NOW!">
                 <font>
                     <Font size="14.0" />
                 </font>

@@ -8,11 +8,15 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import utils.Database;
 
 public class LoginController implements Initializable {
@@ -24,15 +28,12 @@ public class LoginController implements Initializable {
     @FXML private Label forgotPasswordLabel;
     @FXML private Label errorLabel;
 
+    private String loggedInUsername; // Add this field
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Set up login button action
         loginButton.setOnAction(event -> handleLogin());
-        
-        // Set up signup button action
         signupButton.setOnAction(event -> switchToSignup());
-        
-        // Set up forgot password action
         forgotPasswordLabel.setOnMouseClicked(event -> handleForgotPassword());
     }
 
@@ -40,18 +41,15 @@ public class LoginController implements Initializable {
         String username = usernameField.getText().trim();
         String password = passwordField.getText().trim();
 
-        // Validate inputs
         if (username.isEmpty() || password.isEmpty()) {
             showError("Please enter both username and password");
             return;
         }
 
-        // Authenticate user
         try {
             if (authenticateUser(username, password)) {
                 showSuccess("Login successful!");
-                // Proceed to main application
-                navigateToMainApp();
+                navigateToMainApp(username);
             } else {
                 showError("Invalid username or password");
             }
@@ -63,16 +61,15 @@ public class LoginController implements Initializable {
 
     private boolean authenticateUser(String username, String password) throws SQLException {
         String sql = "SELECT password FROM Users WHERE username = ?";
-        
+
         try (Connection conn = Database.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            
+
             pstmt.setString(1, username);
             ResultSet rs = pstmt.executeQuery();
-            
+
             if (rs.next()) {
                 String storedPassword = rs.getString("password");
-                // In a real app, you would compare hashed passwords here
                 return password.equals(storedPassword);
             }
             return false;
@@ -80,28 +77,43 @@ public class LoginController implements Initializable {
     }
 
     private void handleForgotPassword() {
-        // Implement forgot password functionality
         showError("Forgot password functionality not implemented yet");
     }
 
     private void switchToSignup() {
-        // Implement navigation to signup screen
         try {
-            SceneManager.switchToScene("/view/registerview.fxml");
+            Stage currentStage = (Stage) signupButton.getScene().getWindow();
+            SceneManager.switchToScene("/view/registerview.fxml", currentStage);
         } catch (Exception e) {
             showError("Could not load registration screen");
             e.printStackTrace();
         }
     }
 
-    private void navigateToMainApp() {
-        // Implement navigation to main application
+    private void navigateToMainApp(String username) {
         try {
-            SceneManager.switchToScene("/mainview.fxml");
+            Stage currentStage = (Stage) loginButton.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PixelyMain.fxml"));
+            Parent root = loader.load();
+
+            // Pass the username to the main controller
+            PixelyController controller = loader.getController();
+            controller.setLoggedInUsername(username);
+
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root));
+            newStage.show();
+
+            currentStage.close();
         } catch (Exception e) {
             showError("Could not load application");
             e.printStackTrace();
         }
+    }
+
+    private void loadCurrentUser() {
+        // This method would be implemented if you need to load user data
+        // Currently just storing the username
     }
 
     private void showError(String message) {

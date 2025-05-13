@@ -6,16 +6,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class SceneManager {
-    public static void switchToScene(String fxmlFile) throws Exception {
-        Parent root = FXMLLoader.load(SceneManager.class.getResource(fxmlFile));
-        Stage stage = (Stage) SceneManager.getCurrentStage();
-        stage.setScene(new Scene(root));
-        stage.show();
+    public static void switchToScene(String fxmlPath, Stage currentStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource(fxmlPath));
+        Parent root = loader.load();
+        Stage newStage = new Stage();
+        newStage.setScene(new Scene(root));
+        newStage.show();
+
+        // Close current window if provided
+        if (currentStage != null) {
+            currentStage.close();
+        }
     }
 
-    private static Object getCurrentStage() {
-        // You'll need to implement this based on your application structure
-        // This is a placeholder - in a real app you might track the current stage
-        return null;
+    public static void switchToScene(String fxmlPath) throws Exception {
+        switchToScene(fxmlPath, null);
     }
 }
