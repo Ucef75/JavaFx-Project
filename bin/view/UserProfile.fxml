@@ -13,31 +13,83 @@
     </top>
 
     <center>
-        <VBox spacing="15" alignment="CENTER">
-            <padding>
-                <Insets top="20" right="20" bottom="20" left="20" />
-            </padding>
+        <StackPane>
+            <!-- View Profile Pane -->
+            <VBox fx:id="viewProfilePane" spacing="15" alignment="CENTER">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20" />
+                </padding>
 
-            <HBox spacing="20" alignment="CENTER">
-                <ImageView fx:id="userAvatar" fitWidth="150" fitHeight="150" preserveRatio="true" />
+                <HBox spacing="20" alignment="CENTER">
+                    <ImageView fx:id="userAvatar" fitWidth="150" fitHeight="150" preserveRatio="true" style="-fx-border-color: black; -fx-border-width: 2;" />
 
-                <VBox spacing="10">
-                    <Label fx:id="userFullName" text="Player Name" style="-fx-font-size: 20; -fx-font-weight: bold;" />
-                    <HBox spacing="5">
-                        <Label text="Member since:" />
-                        <Label fx:id="joinDateLabel" text="01-01-2025" />
-                    </HBox>
-                    <HBox spacing="5">
-                        <Label text="Country:" />
-                        <Label fx:id="countryLabel" text="United States" />
-                    </HBox>
-                </VBox>
-            </HBox>
+                    <VBox spacing="10">
+                        <Label fx:id="userFullName" text="Player Name" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                        <HBox spacing="5">
+                            <Label text="Member since:" />
+                            <Label fx:id="joinDateLabel" text="01-01-2025" />
+                        </HBox>
+                        <HBox spacing="5">
+                            <Label text="Country:" />
+                            <Label fx:id="countryLabel" text="United States" />
+                        </HBox>
+                    </VBox>
+                </HBox>
 
-            <HBox spacing="10" alignment="CENTER">
-                <Button fx:id="editProfileButton" text="Edit Profile" onAction="#editProfile" style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
-                <Button fx:id="closeButton" text="Close" onAction="#closeProfile" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" />
-            </HBox>
-        </VBox>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="chooseAvatarButton" text="Choose Avatar" onAction="#chooseAvatar" style="-fx-background-color: #F39C12; -fx-text-fill: white;" />
+                    <Button fx:id="uploadAvatarButton" text="Upload Avatar" onAction="#uploadAvatar" style="-fx-background-color: #27AE60; -fx-text-fill: white;" />
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="editProfileButton" text="Edit Profile" onAction="#editProfile" style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
+                    <Button fx:id="closeButton" text="Close" onAction="#closeProfile" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" />
+                </HBox>
+            </VBox>
+
+            <!-- Edit Profile Pane -->
+            <VBox fx:id="editProfilePane" spacing="15" alignment="CENTER">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20" />
+                </padding>
+
+                <HBox spacing="20" alignment="CENTER">
+                    <ImageView fx:id="editUserAvatar" fitWidth="150" fitHeight="150" preserveRatio="true" style="-fx-border-color: black; -fx-border-width: 2;">
+                        <image>
+                            <Image url="@/Avatar-photos/default-avatar.jpg" />
+                        </image>
+                    </ImageView>
+
+                    <VBox spacing="10">
+                        <Label text="Change Password" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+
+                        <HBox spacing="5">
+                            <Label text="Current Password:" prefWidth="120" />
+                            <PasswordField fx:id="currentPasswordField" prefWidth="200" />
+                        </HBox>
+
+                        <HBox spacing="5">
+                            <Label text="New Password:" prefWidth="120" />
+                            <PasswordField fx:id="newPasswordField" prefWidth="200" />
+                        </HBox>
+
+                        <HBox spacing="5">
+                            <Label text="Confirm Password:" prefWidth="120" />
+                            <PasswordField fx:id="confirmPasswordField" prefWidth="200" />
+                        </HBox>
+                    </VBox>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="chooseAvatarEditButton" text="Choose Avatar" onAction="#chooseAvatar" style="-fx-background-color: #F39C12; -fx-text-fill: white;" />
+                    <Button fx:id="uploadAvatarEditButton" text="Upload Avatar" onAction="#uploadAvatar" style="-fx-background-color: #27AE60; -fx-text-fill: white;" />
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="saveProfileButton" text="Save Changes" onAction="#saveProfile" style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
+                    <Button fx:id="cancelEditButton" text="Cancel" onAction="#cancelEdit" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" />
+                </HBox>
+            </VBox>
+        </StackPane>
     </center>
 </BorderPane>

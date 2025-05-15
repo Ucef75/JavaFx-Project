@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ChooseAvatarController">
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: #2C3E50; -fx-padding: 10;">
+            <Label text="Choose Your Avatar" style="-fx-font-size: 24; -fx-text-fill: white; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true">
+            <TilePane fx:id="avatarTilePane" hgap="10" vgap="10" alignment="CENTER" style="-fx-padding: 20;">
+                <!-- Avatars will be dynamically added here -->
+            </TilePane>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+            <Button fx:id="confirmButton" text="Confirm Selection" onAction="#confirmSelection" style="-fx-background-color: #27AE60; -fx-text-fill: white;" />
+            <Button fx:id="cancelButton" text="Cancel" onAction="#cancelSelection" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" />
+        </HBox>
+    </bottom>
+</BorderPane>

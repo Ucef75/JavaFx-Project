@@ -5,8 +5,9 @@ public class User {
     private String username;
     private String password;
     private String country;
-    private String created;   // date de création du compte (format : yyyy-MM-dd)
-    private String birthdate; // date de naissance (format : yyyy-MM-dd)
+    private String created;   // Account creation date (format: yyyy-MM-dd)
+    private String birthdate; // Birthdate (format: yyyy-MM-dd)
+    private String avatarPath; // Path to the avatar image
 
     public User(Integer userId, String username, String password, String country, String created, String birthdate) {
         this.userId = userId;
@@ -15,7 +16,9 @@ public class User {
         this.country = country;
         this.created = created;
         this.birthdate = birthdate;
+        this.avatarPath = null; // Default avatar path is null
     }
+
     // Getters
     public Integer getUserId() { return userId; }
     public String getUsername() { return username; }
@@ -23,13 +26,14 @@ public class User {
     public String getCountry() { return country; }
     public String getCreated() { return created; }
     public String getBirthdate() { return birthdate; }
+    public String getAvatarPath() { return avatarPath; }
 
-
-    // Optionnels : Setters si tu veux permettre la modification après création
+    // Setters
     public void setUserId(Integer userId) { this.userId = userId; }
     public void setUsername(String username) { this.username = username; }
     public void setPassword(String password) { this.password = password; }
     public void setCountry(String country) { this.country = country; }
     public void setCreated(String created) { this.created = created; }
     public void setBirthdate(String birthdate) { this.birthdate = birthdate; }
+    public void setAvatarPath(String avatarPath) { this.avatarPath = avatarPath; }
 }

@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Database {
     // Database file path - will be created in the working directory
@@ -40,6 +42,7 @@ public class Database {
                     password TEXT NOT NULL,
                     country TEXT NOT NULL,
                     birth_date TEXT NOT NULL,
+                    avatar_path TEXT DEFAULT '/Avatar-photos/default-avatar.jpg',
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 );
             """;
@@ -57,6 +60,10 @@ public class Database {
             // Execute table creation statements
             stmt.execute(createUsersTable);
             stmt.execute(createGamesTable);
+
+            // Ensure avatar_path column exists
+            ensureAvatarPathColumn();
+
             // Insert default games
             insertDefaultGames();
 
@@ -68,9 +75,36 @@ public class Database {
         }
     }
 
+    private static void ensureAvatarPathColumn() {
+        String checkColumnSql = "PRAGMA table_info(Users);";
+        boolean columnExists = false;
+
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(checkColumnSql)) {
+
+            while (rs.next()) {
+                if ("avatar_path".equalsIgnoreCase(rs.getString("name"))) {
+                    columnExists = true;
+                    break;
+                }
+            }
+
+            if (!columnExists) {
+                String addColumnSql = "ALTER TABLE Users ADD COLUMN avatar_path TEXT DEFAULT '/Avatar-photos/default-avatar.jpg';";
+                stmt.execute(addColumnSql);
+                System.out.println("avatar_path column added to Users table.");
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error ensuring avatar_path column: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
     private static void insertDefaultGames() {
         String[] games = {
-                "Bomberman","BrickBreaker","Catch","Dungeon","FlappyBird","Game2048","Pong","Snake","The Circles","Asteroid","Pacman"
+                "Bomberman", "BrickBreaker", "Catch", "Dungeon", "FlappyBird", "Game2048", "Pong", "Snake", "The Circles", "Asteroid", "Pacman"
         };
 
         String sql = "INSERT OR IGNORE INTO Games (game_name) VALUES (?)";
@@ -118,7 +152,7 @@ public class Database {
     }
 
     public static Map<String, Object> loadUserByUsername(String username) {
-        String sql = "SELECT user_id, username, country, birth_date, created_at FROM Users WHERE username = ?";
+        String sql = "SELECT user_id, username, country, birth_date, avatar_path, created_at FROM Users WHERE username = ?";
         Map<String, Object> userData = new HashMap<>();
 
         try (Connection conn = connect();
@@ -132,6 +166,7 @@ public class Database {
                 userData.put("username", rs.getString("username"));
                 userData.put("country", rs.getString("country"));
                 userData.put("birth_date", rs.getString("birth_date"));
+                userData.put("avatar_path", rs.getString("avatar_path"));
                 userData.put("created_at", rs.getString("created_at"));
             }
         } catch (SQLException e) {
@@ -140,6 +175,48 @@ public class Database {
         }
 
         return userData.isEmpty() ? null : userData;
+    }
+
+
+    public static boolean updateAvatar(String username, String avatarPath) {
+        String sql = "UPDATE Users SET avatar_path = ? WHERE username = ?";
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, avatarPath);
+            pstmt.setString(2, username);
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error updating avatar: " + e.getMessage());
+            return false;
+        }
+    }
+    /**
+     * Loads all usernames and countries from the database
+     * @return List of user data maps containing only username and country
+     */
+    public static List<Map<String, String>> loadAllUsersBasicInfo() {
+        String sql = "SELECT username, country FROM Users ORDER BY username ASC";
+        List<Map<String, String>> users = new ArrayList<>();
+
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                Map<String, String> userData = new HashMap<>();
+                userData.put("username", rs.getString("username"));
+                userData.put("country", rs.getString("country"));
+                users.add(userData);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error loading basic user info: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return users;
     }
 
     public static boolean isDriverAvailable() {

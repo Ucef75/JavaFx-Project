@@ -5,31 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df4fd898-6ff3-4a7a-999a-31d6da3956ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/ChooseAvatarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/UserDirectoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/games/Connect4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/games/XOGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ChooseAvatarDialog.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/UserDirectory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/application/StartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/StartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/Score.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/utils/Database.db" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/Database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/PixelyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/PixelyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/SettingsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/UserProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/css/interface.css" beforeDir="false" afterPath="$PROJECT_DIR$/bin/css/interface.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/FlappyBird$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/FlappyBird$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/FlappyBird.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/FlappyBird.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Dungeon.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Dungeon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$GameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Pong$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Pong$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Pong.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Pong.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Snake$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Snake.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/utils/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/utils/Database.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/utils/Database.sqbpro" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/Database.sqbpro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/utils/GameLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/GameLibrary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/Leaderboard.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/view/PixelyMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/PixelyMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/interface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/interface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/PixelySettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/PixelySettings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/UserProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/UserProfile.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/GameDetailController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/LeaderboardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/LeaderboardEntry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/PixelyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/PixelyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/SceneManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/StartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/UserActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Score.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/interface.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/interface.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/games/FlappyBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/FlappyBird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/games/MiniDungeonGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/MiniDungeonGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/games/Pong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/Pong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/games/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Database.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Database.sqbpro" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Database.sqbpro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/GameLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GameLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Leaderboard.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/PixelyMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PixelyMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/interface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/interface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PixelySettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PixelySettings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/UserProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/UserProfile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,51 +83,52 @@
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="$PROJECT_DIR$/../../../../../../../wamp64/bin/php/php7.4.33/php.exe" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2wzuMbZDqSJzZk39gQnPkyOMRxJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pathVariables",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MiniDungeonGame.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\takil\OneDrive\Desktop\java\Project_Workspace\TP\bin\games" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="application.Main" />
       <module name="TP" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\takil\OneDrive\Desktop\java\javasdk\javafx-sdk-24\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\takil\OneDrive\Desktop\java\javasdk\javafx-sdk-24\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media --add-opens javafx.base/com.sun.javafx=ALL-UNNAMED --add-exports javafx.base/com.sun.javafx=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="application.*" />
@@ -108,6 +139,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MiniDungeonGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="games.MiniDungeonGame" />
+      <module name="TP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="games.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MiniDungeonGame" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MiniDungeonGame" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -125,6 +178,8 @@
       <option name="presentableId" value="Default" />
       <updated>1747056691770</updated>
       <workItem from="1747056692883" duration="20769000" />
+      <workItem from="1747148680828" duration="11726000" />
+      <workItem from="1747226821757" duration="13092000" />
     </task>
     <servers />
   </component>

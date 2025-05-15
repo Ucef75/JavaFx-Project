@@ -1,5 +1,6 @@
 package games;
 
+import globalFunc.Sound_Func;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -10,6 +11,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.ArrayList;
@@ -21,6 +24,7 @@ public class MiniDungeonGame extends Application {
     private Player player;
     private GameView gameView;
     private boolean isGameRunning = false;
+    private Timeline gameLoop;
 
     @Override
     public void start(Stage primaryStage) {
@@ -33,14 +37,19 @@ public class MiniDungeonGame extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+        // Play background music
+        Sound_Func.playBackgroundSong();
+
         startGame(scene);
     }
 
     private void startGame(Scene scene) {
         isGameRunning = true;
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), e -> updateGame()));
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
+
+        // Setup game loop
+        gameLoop = new Timeline(new KeyFrame(Duration.seconds(0.5), e -> updateGame()));
+        gameLoop.setCycleCount(Timeline.INDEFINITE);
+        gameLoop.play();
 
         scene.setOnKeyPressed(this::handleKeyPress);
     }
@@ -51,19 +60,36 @@ public class MiniDungeonGame extends Application {
             gameView.update();
 
             if (player.getHealth() <= 0) {
-                isGameRunning = false;
-                gameView.showGameOver();
+                endGame(false);
             }
             if (dungeon.getTreasureCount() == 0) {
-                isGameRunning = false;
-                gameView.showVictory();
+                endGame(true);
             }
         }
     }
 
+    private void endGame(boolean victory) {
+        isGameRunning = false;
+        gameLoop.stop();
+
+        if (victory) {
+            Sound_Func.playVictorySound();
+            gameView.showVictory();
+        } else {
+            Sound_Func.playDefeatSound();
+            gameView.showGameOver();
+        }
+    }
+
     private void handleKeyPress(KeyEvent event) {
-        if (!isGameRunning) return;
         KeyCode code = event.getCode();
+
+        if (!isGameRunning && code == KeyCode.SPACE) {
+            resetGame();
+            return;
+        }
+
+        if (!isGameRunning) return;
 
         switch (code) {
             case W, UP -> player.moveUp();
@@ -75,7 +101,15 @@ public class MiniDungeonGame extends Application {
         gameView.update();
     }
 
-    // -------- CLASSES INTERNES --------
+    private void resetGame() {
+        dungeon = new Dungeon(10, 10);
+        player = new Player(1, 1, dungeon);
+        gameView.resetView(dungeon, player);
+        isGameRunning = true;
+        gameLoop.play();
+    }
+
+    // -------- INNER CLASSES --------
 
     private class Dungeon {
         private int width, height;
@@ -93,24 +127,35 @@ public class MiniDungeonGame extends Application {
         }
 
         private void generateDungeon() {
+            // Generate walls around the edges
             for (int i = 0; i < width; i++) {
                 for (int j = 0; j < height; j++) {
                     grid[i][j] = (i == 0 || j == 0 || i == width - 1 || j == height - 1) ? '#' : '.';
                 }
             }
 
+            // Place treasures
             treasureCount = 5;
             for (int i = 0; i < treasureCount; i++) {
-                int x = random.nextInt(width - 2) + 1;
-                int y = random.nextInt(height - 2) + 1;
-                grid[x][y] = 'T';
+                placeRandomTile('T');
             }
 
+            // Place enemies
             for (int i = 0; i < 3; i++) {
-                int x = random.nextInt(width - 2) + 1;
-                int y = random.nextInt(height - 2) + 1;
+                placeRandomTile('E');
+            }
+        }
+
+        private void placeRandomTile(char tile) {
+            int x, y;
+            do {
+                x = random.nextInt(width - 2) + 1;
+                y = random.nextInt(height - 2) + 1;
+            } while (grid[x][y] != '.');
+
+            grid[x][y] = tile;
+            if (tile == 'E') {
                 enemies.add(new Enemy(x, y));
-                grid[x][y] = 'E';
             }
         }
 
@@ -183,10 +228,12 @@ public class MiniDungeonGame extends Application {
         private void interactWithTile() {
             char tile = dungeon.getTile(x, y);
             if (tile == 'T') {
+                Sound_Func.playEatingSound();
                 score += 10;
                 dungeon.setTile(x, y, '.');
                 dungeon.collectTreasure();
             } else if (tile == 'E') {
+                Sound_Func.playDefeatSound();
                 health -= 10;
                 moveAwayFromEnemy();
             }
@@ -202,12 +249,24 @@ public class MiniDungeonGame extends Application {
         private Dungeon dungeon;
         private Player player;
         private Canvas canvas;
+        private Text statusText;
 
         public GameView(Dungeon dungeon, Player player) {
             this.dungeon = dungeon;
             this.player = player;
             canvas = new Canvas(500, 500);
-            getChildren().add(canvas);
+            statusText = new Text();
+            statusText.setFont(Font.font(20));
+            statusText.setFill(Color.WHITE);
+
+            getChildren().addAll(canvas, statusText);
+            update();
+        }
+
+        public void resetView(Dungeon newDungeon, Player newPlayer) {
+            this.dungeon = newDungeon;
+            this.player = newPlayer;
+            statusText.setText("");
             update();
         }
 
@@ -218,6 +277,7 @@ public class MiniDungeonGame extends Application {
 
             double tileSize = 500.0 / dungeon.getWidth();
 
+            // Draw dungeon tiles
             for (int x = 0; x < dungeon.getWidth(); x++) {
                 for (int y = 0; y < dungeon.getHeight(); y++) {
                     char tile = dungeon.getTile(x, y);
@@ -231,16 +291,29 @@ public class MiniDungeonGame extends Application {
                 }
             }
 
+            // Draw player
             gc.setFill(Color.BLUE);
             gc.fillOval(player.getX() * tileSize, player.getY() * tileSize, tileSize, tileSize);
+
+            // Update status text
+            statusText.setText(String.format("Health: %d | Score: %d | Treasure: %d",
+                    player.getHealth(), player.getScore(), dungeon.getTreasureCount()));
         }
 
         public void showGameOver() {
-            System.out.println("Game Over!");
+            Text gameOverText = new Text("GAME OVER\nPress SPACE to restart");
+            gameOverText.setFont(Font.font(30));
+            gameOverText.setFill(Color.RED);
+            gameOverText.setTranslateY(-50);
+            getChildren().add(gameOverText);
         }
 
         public void showVictory() {
-            System.out.println("Victory!");
+            Text victoryText = new Text("VICTORY!\nPress SPACE to play again");
+            victoryText.setFont(Font.font(30));
+            victoryText.setFill(Color.GOLD);
+            victoryText.setTranslateY(-50);
+            getChildren().add(victoryText);
         }
     }
 

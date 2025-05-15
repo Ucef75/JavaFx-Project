@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="application.UserDirectoryController"
+      prefWidth="500" prefHeight="600" spacing="10">
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15" />
+    </padding>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label fx:id="titleLabel" text="User Directory" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+    </HBox>
+
+    <ScrollPane fx:id="usersScrollPane" VBox.vgrow="ALWAYS" fitToWidth="true">
+        <VBox fx:id="usersContainer" spacing="10">
+            <!-- Users will be loaded here dynamically -->
+        </VBox>
+    </ScrollPane>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Button text="Close" onAction="#closeWindow" style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
+    </HBox>
+</VBox>

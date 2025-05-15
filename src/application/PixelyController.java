@@ -1,20 +1,24 @@
 package application;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 import javafx.scene.control.Alert;
+import java.io.IOException;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.layout.Region;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.application.Platform;
 import java.io.IOException;
-import java.io.InputStream;  // Added this missing import
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -23,11 +27,14 @@ import model.Game;
 import model.User;
 import utils.Database;
 import utils.GameLibrary;
+import globalFunc.Sound_Func;
 
 public class PixelyController {
 
     @FXML
     private GridPane gamesGrid;
+    @FXML
+    private Button usersDirectoryButton;
     @FXML
     private Button settingsButton;
     @FXML
@@ -55,9 +62,13 @@ public class PixelyController {
         setupButtonActions();
         loadGames();
         displayGames();
+
+        // Start background music when the application initializes
+        Sound_Func.playBackgroundSong();
     }
 
     private void setupButtonActions() {
+        usersDirectoryButton.setOnAction(e -> showUsersDirectory());
         settingsButton.setOnAction(e -> openSettings());
         userButton.setOnAction(e -> showUserProfile());
         logoutButton.setOnAction(e -> logout());
@@ -119,36 +130,36 @@ public class PixelyController {
         gameBox.setStyle("-fx-border-color: #3498DB; -fx-border-width: 2; -fx-padding: 10; -fx-background-color: #ECF0F1;");
 
         ImageView imageView = new ImageView();
+        imageView.setFitWidth(150);
+        imageView.setFitHeight(150);
+        imageView.setPreserveRatio(true);
+
         try {
-            // First try to load the game-specific image
             String imagePath = game.getImagePath();
             if (imagePath != null && !imagePath.isEmpty()) {
                 InputStream imageStream = getClass().getResourceAsStream(imagePath);
                 if (imageStream != null) {
                     imageView.setImage(new Image(imageStream));
                 } else {
-                    throw new IOException("Image not found at: " + imagePath);
-                }
-            } else {
-                // Fall back to default image
-                InputStream defaultStream = getClass().getResourceAsStream("/pictures/default_game.png");
-                if (defaultStream != null) {
-                    imageView.setImage(new Image(defaultStream));
-                } else {
-                    System.err.println("Default game image not found");
+                    // Try to load a game-specific image directly if the path from DB fails
+                    String fallbackPath = "/pictures/" + game.getName().replace(" ", "_") + "_game.jpg";
+                    InputStream fallbackStream = getClass().getResourceAsStream(fallbackPath);
+                    if (fallbackStream != null) {
+                        imageView.setImage(new Image(fallbackStream));
+                    } else {
+                        // Try with png if jpg not found
+                        fallbackPath = "/pictures/" + game.getName().replace(" ", "_") + "_game.png";
+                        fallbackStream = getClass().getResourceAsStream(fallbackPath);
+                        if (fallbackStream != null) {
+                            imageView.setImage(new Image(fallbackStream));
+                        } else {
+                            System.err.println("Game-specific image not found for: " + game.getName());
+                        }
+                    }
                 }
             }
         } catch (Exception e) {
             System.err.println("Error loading image for " + game.getName() + ": " + e.getMessage());
-            try {
-                // Final fallback if both images fail
-                InputStream defaultStream = getClass().getResourceAsStream("/pictures/default_game.png");
-                if (defaultStream != null) {
-                    imageView.setImage(new Image(defaultStream));
-                }
-            } catch (Exception ex) {
-                System.err.println("Could not load any image for game: " + game.getName());
-            }
         }
 
         imageView.setFitWidth(120);
@@ -177,11 +188,36 @@ public class PixelyController {
         }
 
         try {
-            // Fix for launching the game properly using JavaFX Application methods
             Class<? extends javafx.application.Application> gameClass = game.getGameClass();
             if (gameClass != null) {
-                String[] args = new String[0];
-                javafx.application.Application.launch(gameClass, args);
+                // Create a new thread to launch the game instead of using Application.launch()
+                Thread gameThread = new Thread(() -> {
+                    try {
+                        // Create an instance of the game application
+                        javafx.application.Application gameApp = gameClass.getDeclaredConstructor().newInstance();
+
+                        // Run the game in a new stage
+                        Platform.runLater(() -> {
+                            try {
+                                Stage gameStage = new Stage();
+                                gameStage.setTitle(game.getName());
+
+                                // Call the start method manually
+                                gameApp.start(gameStage);
+
+                                // Show the stage
+                                gameStage.show();
+                            } catch (Exception ex) {
+                                Platform.runLater(() -> showError("Error", "Failed to launch game: " + ex.getMessage()));
+                            }
+                        });
+                    } catch (Exception ex) {
+                        Platform.runLater(() -> showError("Error", "Failed to initialize game: " + ex.getMessage()));
+                    }
+                });
+
+                gameThread.setDaemon(true);
+                gameThread.start();
             } else {
                 throw new Exception("Game class not found for " + game.getName());
             }
@@ -191,14 +227,36 @@ public class PixelyController {
     }
 
     @FXML
-    private void openSettings() {
+    private void showUsersDirectory() {
+        if (currentUser == null) {
+            showError("Error", "Please log in to view users directory.");
+            return;
+        }
+
+        try {
+            // Use getResource() with the correct path
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/UserDirectory.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Users Directory");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            showError("Error", "Failed to open users directory: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void openSettings() {
         if (currentUser == null) {
             showError("Error", "Please log in to access settings.");
             return;
         }
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/PixelySettings.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PixelySettings.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(loader.load()));
             stage.setTitle("Settings");
@@ -211,19 +269,19 @@ public class PixelyController {
             loadCurrentUser();
             updateWelcomeMessage();
         } catch (IOException e) {
-            showError("Error", "Failed to open settings.");
+            showError("Error", "Failed to open settings: " + e.getMessage());
         }
     }
 
     @FXML
-    private void showUserProfile() {
+    public void showUserProfile() {
         if (currentUser == null) {
             showError("Error", "Please log in to view profile.");
             return;
         }
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/UserProfile.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/UserProfile.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(loader.load()));
             stage.setTitle("User Profile");
@@ -232,13 +290,19 @@ public class PixelyController {
             UserProfileController controller = loader.getController();
             controller.setUser(currentUser);
             stage.showAndWait();
+
+            // Play sound when profile is opened (using the existing Sound_Func)
+            Sound_Func.playProfileOpenedSound();
         } catch (IOException e) {
-            showError("Error", "Failed to open profile.");
+            showError("Error", "Failed to open profile: " + e.getMessage());
         }
     }
 
     @FXML
-    private void logout() {
+    public void logout() {
+        // Stop background music when logging out
+        Sound_Func.stopBackgroundMusic();
+
         currentUser = null;
         try {
             Stage currentStage = (Stage) logoutButton.getScene().getWindow();
@@ -246,12 +310,14 @@ public class PixelyController {
             currentStage.setScene(new Scene(loader.load()));
             currentStage.setTitle("Pixely Login");
         } catch (IOException e) {
-            showError("Error", "Failed to logout.");
+            showError("Error", "Failed to logout: " + e.getMessage());
         }
     }
 
     @FXML
-    private void exit() {
+    public void exit() {
+        // Ensure background music is stopped when exiting
+        Sound_Func.stopBackgroundMusic();
         Platform.exit();
     }
 
@@ -260,6 +326,7 @@ public class PixelyController {
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         alert.showAndWait();
     }
 }
