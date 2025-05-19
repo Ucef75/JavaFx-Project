@@ -1,0 +1,41 @@
+/* Default Theme */
+
+.root {
+    -fx-background-color: #F5F7FA;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.label, .text {
+    -fx-text-fill: #2d3436;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to right, #6a11cb, #2575fc);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+.text-field, .combo-box, .password-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dfe6e9;
+    -fx-border-radius: 5;
+    -fx-padding: 4 8 4 8;
+}
+
+.menu-bar, .menu {
+    -fx-background-color: #e3e7ed;
+}
+
+.grid-pane, .vbox, .hbox, .border-pane {
+    -fx-background-color: transparent;
+}
+
+.table-view {
+    -fx-background-color: #fafbfc;
+    -fx-table-cell-border-color: #dfe6e9;
+}

@@ -5,22 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df4fd898-6ff3-4a7a-999a-31d6da3956ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/application/ChooseAvatarController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/application/UserDirectoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/games/Connect4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/games/XOGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/ChooseAvatarDialog.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/UserDirectory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/SettingsManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/ThemeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/avatar-selector.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/dark-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/default-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/high-contrast-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/light-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/profileview.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lang/strings.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lang/strings_de.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lang/strings_en.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lang/strings_es.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lang/strings_fr.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/application/PixelyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/PixelyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/RegisterController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/application/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/SettingsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/application/UserDirectoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/UserDirectoryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/application/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/UserProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/css/interface.css" beforeDir="false" afterPath="$PROJECT_DIR$/bin/css/interface.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/games/FlappyBird$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/FlappyBird$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/games/FlappyBird.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/FlappyBird.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/css/registerview.css" beforeDir="false" afterPath="$PROJECT_DIR$/bin/css/registerview.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Bomberman$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Bomberman$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Bomberman.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Bomberman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Catch.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Catch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Game2048.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Game2048.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Dungeon.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Dungeon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Enemy.class" afterDir="false" />
@@ -28,38 +38,33 @@
       <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$GameView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame$Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/games/MiniDungeonGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/MiniDungeonGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/games/Pong$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Pong$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/games/Pong.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Pong.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/games/Snake$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/games/Snake.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Snake$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Snake$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/Snake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/TheCircles$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/TheCircles$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/games/TheCircles.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/games/TheCircles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/utils/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/utils/Database.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/utils/Database.sqbpro" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/Database.sqbpro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/utils/GameLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/GameLibrary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/Leaderboard.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/PixelyMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/PixelyMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/PixelySettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/PixelySettings.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/view/UserProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/UserProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/loginview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/loginview.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/registerview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/registerview.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/PixelyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/PixelyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/RegisterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/UserDirectoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/UserDirectoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/interface.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/interface.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/games/FlappyBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/FlappyBird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/registerview.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/registerview.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/games/Bomberman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/Bomberman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/games/Catch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/Catch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/games/Game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/Game2048.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/games/MiniDungeonGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/MiniDungeonGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/games/Pong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/Pong.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/games/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/games/TheCircles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/TheCircles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Database.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Database.sqbpro" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Database.sqbpro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/GameLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GameLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Leaderboard.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PixelyMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PixelyMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PixelySettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PixelySettings.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/UserProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/UserProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/loginview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/loginview.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/registerview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/registerview.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +80,7 @@
         <option value="Dockerfile" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -102,6 +108,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -110,7 +117,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -180,6 +187,11 @@
       <workItem from="1747056692883" duration="20769000" />
       <workItem from="1747148680828" duration="11726000" />
       <workItem from="1747226821757" duration="13092000" />
+      <workItem from="1747304226915" duration="3033000" />
+      <workItem from="1747480171931" duration="12909000" />
+      <workItem from="1747505105758" duration="116000" />
+      <workItem from="1747576992637" duration="7000" />
+      <workItem from="1747644154004" duration="870000" />
     </task>
     <servers />
   </component>

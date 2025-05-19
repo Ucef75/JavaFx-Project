@@ -1,0 +1,47 @@
+/* High Contrast Theme */
+
+.root {
+    -fx-background-color: #000000;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.label, .text {
+    -fx-text-fill: #ffff00;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-color: #000000;
+    -fx-text-fill: #00ffff;
+    -fx-border-color: #ffff00;
+    -fx-border-width: 2;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}
+
+.button:hover {
+    -fx-background-color: #222222;
+    -fx-text-fill: #ff00ff;
+}
+
+.text-field, .combo-box, .password-field {
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #00ffff;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-padding: 4 8 4 8;
+}
+
+.menu-bar, .menu {
+    -fx-background-color: #000000;
+}
+
+.grid-pane, .vbox, .hbox, .border-pane {
+    -fx-background-color: transparent;
+}
+
+.table-view {
+    -fx-background-color: #000000;
+    -fx-table-cell-border-color: #ffff00;
+}

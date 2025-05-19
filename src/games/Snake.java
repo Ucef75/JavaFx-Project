@@ -5,12 +5,15 @@ import globalFunc.Sound_Func;  // Import the sound functions
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.skin.TextInputControlSkin.Direction;
+import javafx.scene.control.Alert;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.LinkedList;
@@ -27,47 +30,80 @@ public class Snake extends Application {
     private boolean running = true;
     private Rectangle food;
     private Random random = new Random();
-    private Pane root = new Pane();
+    private Pane gamePane = new Pane();
     private Timeline timeline;
     private MainMenu mainMenu;
     private boolean gamePaused = false;
 
+    private int score = 0;
+    private int highScore = 0;
+    private Text scoreText = new Text();
+    private Text highScoreText = new Text();
+
+    private enum Direction {
+        UP, DOWN, LEFT, RIGHT
+    }
+
     @Override
     public void start(Stage primaryStage) {
-        initGame();
-        Scene gameScene = new Scene(root, WIDTH, HEIGHT);
-        
+        VBox mainLayout = new VBox(0);
+        mainLayout.setAlignment(Pos.TOP_CENTER);
+
+        HBox scoreBox = new HBox(30, scoreText, highScoreText);
+        scoreBox.setAlignment(Pos.CENTER);
+        scoreText.setFont(Font.font(20));
+        highScoreText.setFont(Font.font(20));
+        updateScore(0);
+
+        gamePane.setPrefSize(WIDTH, HEIGHT);
+        mainLayout.getChildren().addAll(scoreBox, gamePane);
+
+        Scene gameScene = new Scene(mainLayout);
+
         // Initialize menu with resume callback
         mainMenu = new MainMenu(primaryStage, gameScene, () -> {
             gamePaused = false;
             timeline.play();
-            Sound_Func.playBackground(); // If you have background music
+            Sound_Func.playBackground();
         });
-        
-        // Set up key controls
+
+        // Key controls
         gameScene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ESCAPE) {
                 toggleGamePause();
             } else if (!gamePaused) {
-                // Original movement handlers
-                if (e.getCode() == KeyCode.UP && direction != Direction.DOWN) direction = Direction.UP;
-                if (e.getCode() == KeyCode.DOWN && direction != Direction.UP) direction = Direction.DOWN;
-                if (e.getCode() == KeyCode.LEFT && direction != Direction.RIGHT) direction = Direction.LEFT;
-                if (e.getCode() == KeyCode.RIGHT && direction != Direction.LEFT) direction = Direction.RIGHT;
+                switch (e.getCode()) {
+                    case UP:
+                        if (direction != Direction.DOWN) direction = Direction.UP;
+                        break;
+                    case DOWN:
+                        if (direction != Direction.UP) direction = Direction.DOWN;
+                        break;
+                    case LEFT:
+                        if (direction != Direction.RIGHT) direction = Direction.LEFT;
+                        break;
+                    case RIGHT:
+                        if (direction != Direction.LEFT) direction = Direction.RIGHT;
+                        break;
+                }
             }
         });
-        
+
         // Game loop
-        timeline = new Timeline(new KeyFrame(Duration.millis(150), e -> {
+        timeline = new Timeline(new KeyFrame(Duration.millis(100), e -> {
             if (running && !gamePaused) {
                 move();
                 checkCollision();
             }
         }));
         timeline.setCycleCount(Timeline.INDEFINITE);
-        
+
+        resetGame();
+        timeline.play();
+
         primaryStage.setTitle("Snake Game");
         primaryStage.setScene(gameScene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
@@ -75,33 +111,60 @@ public class Snake extends Application {
         gamePaused = !gamePaused;
         if (gamePaused) {
             timeline.pause();
-            Sound_Func.playBackground(); // If you have background music
+            Sound_Func.playBackground();
             mainMenu.showMenu();
         } else {
             mainMenu.hideMenu();
+            timeline.play();
         }
     }
 
+    private void resetGame() {
+        gamePane.getChildren().clear();
+        snake.clear();
+        direction = Direction.RIGHT;
+        running = true;
+        score = 0;
+        updateScore(0);
 
-    private void initGame() {
-        // Remove individual sound loading since we're using Sound_Func
         // Initialize snake
         Rectangle head = new Rectangle(TILE_SIZE, TILE_SIZE);
-        head.setFill(Color.GREEN);
+        head.setArcWidth(10);
+        head.setArcHeight(10);
+        head.setFill(Color.LIMEGREEN);
         head.setX(WIDTH / 2);
         head.setY(HEIGHT / 2);
         snake.add(head);
-        root.getChildren().add(head);
+        gamePane.getChildren().add(head);
 
         spawnFood();
     }
 
     private void spawnFood() {
+        if (food != null) gamePane.getChildren().remove(food);
         food = new Rectangle(TILE_SIZE, TILE_SIZE);
+        food.setArcWidth(10);
+        food.setArcHeight(10);
         food.setFill(Color.RED);
-        food.setX(random.nextInt(WIDTH / TILE_SIZE) * TILE_SIZE);
-        food.setY(random.nextInt(HEIGHT / TILE_SIZE) * TILE_SIZE);
-        root.getChildren().add(food);
+
+        // Only spawn food on empty positions
+        int tries = 0;
+        do {
+            food.setX(random.nextInt(WIDTH / TILE_SIZE) * TILE_SIZE);
+            food.setY(random.nextInt(HEIGHT / TILE_SIZE) * TILE_SIZE);
+            tries++;
+        } while (isFoodOnSnake() && tries < 1000);
+
+        gamePane.getChildren().add(food);
+    }
+
+    private boolean isFoodOnSnake() {
+        for (Rectangle part : snake) {
+            if (part.getX() == food.getX() && part.getY() == food.getY()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void move() {
@@ -117,20 +180,23 @@ public class Snake extends Application {
         }
 
         Rectangle newHead = new Rectangle(TILE_SIZE, TILE_SIZE);
-        newHead.setFill(Color.GREEN);
+        newHead.setArcWidth(10);
+        newHead.setArcHeight(10);
+        newHead.setFill(Color.LIMEGREEN);
         newHead.setX(newX);
         newHead.setY(newY);
 
         snake.addFirst(newHead);
-        root.getChildren().add(newHead);
+        gamePane.getChildren().add(newHead);
 
         if (newHead.getX() == food.getX() && newHead.getY() == food.getY()) {
-            root.getChildren().remove(food);
+            score++;
+            updateScore(1);
+            Sound_Func.playEatingSound();
             spawnFood();
-            Sound_Func.playEatingSound();  // Use centralized sound function
         } else {
             Rectangle tail = snake.removeLast();
-            root.getChildren().remove(tail);
+            gamePane.getChildren().remove(tail);
         }
     }
 
@@ -153,8 +219,24 @@ public class Snake extends Application {
 
     private void gameOver() {
         running = false;
-        Sound_Func.playDefeatSound();  // Use centralized sound function
-        System.out.println("Game Over! Score: " + (snake.size() - 1));
+        timeline.pause();
+        Sound_Func.playDefeatSound();
+        if (score > highScore) {
+            highScore = score;
+        }
+        updateScore(0);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Game Over");
+        alert.setHeaderText("Game Over! Your Score: " + score);
+        alert.setContentText("High Score: " + highScore + "\nPress OK to play again.");
+        alert.showAndWait();
+        resetGame();
+        timeline.play();
+    }
+
+    private void updateScore(int add) {
+        scoreText.setText("Score: " + score);
+        highScoreText.setText("High Score: " + highScore);
     }
 
     public static void main(String[] args) {

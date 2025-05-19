@@ -221,16 +221,6 @@ public class Main extends Application {
                 return;
             }
 
-            // Try png if jpg not found
-            imagePath = "/pictures/Pixely_logo.png";
-            if (getClass().getResource(imagePath) != null) {
-                Image icon = new Image(getClass().getResourceAsStream(imagePath));
-                stage.getIcons().add(icon);
-                return;
-            }
-
-            // If neither is found, log a warning
-            System.err.println("Warning: Application icon not found at /pictures/Pixely_logo.jpg or /pictures/Pixely_logo.png");
         } catch (Exception e) {
             System.err.println("Error loading window icon: " + e.getMessage());
         }

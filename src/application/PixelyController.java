@@ -15,14 +15,13 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.Region;
 import javafx.stage.Modality;
-import javafx.stage.Stage;
 import javafx.application.Platform;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
 import model.Game;
 import model.User;
 import utils.Database;
@@ -58,13 +57,41 @@ public class PixelyController {
 
     @FXML
     public void initialize() {
-        // Initialize UI elements
         setupButtonActions();
         loadGames();
         displayGames();
 
-        // Start background music when the application initializes
+        // Start background music
         Sound_Func.playBackgroundSong();
+
+        // Listen for theme/language changes
+        SettingsManager.getInstance().themeProperty().addListener((obs, oldVal, newVal) -> {
+            Platform.runLater(() -> ThemeUtil.applyTheme(usersDirectoryButton.getScene()));
+        });
+        SettingsManager.getInstance().localeProperty().addListener((obs, oldVal, newVal) -> {
+            Platform.runLater(this::updateTextsFromLocale);
+        });
+
+        // Apply current theme and language
+        Platform.runLater(() -> {
+            if (usersDirectoryButton.getScene() != null) {
+                ThemeUtil.applyTheme(usersDirectoryButton.getScene());
+                updateTextsFromLocale();
+            }
+        });
+    }
+
+    private void updateTextsFromLocale() {
+        ResourceBundle bundle = ResourceBundle.getBundle("lang.strings", SettingsManager.getInstance().getLocale());
+        // Update UI texts here using bundle
+        if (welcomeLabel != null && currentUser != null) {
+            welcomeLabel.setText(bundle.getString("main.welcome") + ", " + currentUser.getUsername() + "!");
+        }
+        usersDirectoryButton.setText(bundle.getString("main.usersDirectory"));
+        settingsButton.setText(bundle.getString("main.settings"));
+        userButton.setText(bundle.getString("main.profile"));
+        logoutButton.setText(bundle.getString("main.logout"));
+        exitButton.setText(bundle.getString("main.exit"));
     }
 
     private void setupButtonActions() {
@@ -77,7 +104,8 @@ public class PixelyController {
 
     private void updateWelcomeMessage() {
         if (currentUser != null && welcomeLabel != null) {
-            welcomeLabel.setText("Welcome, " + currentUser.getUsername() + "!");
+            ResourceBundle bundle = ResourceBundle.getBundle("lang.strings", SettingsManager.getInstance().getLocale());
+            welcomeLabel.setText(bundle.getString("main.welcome") + ", " + currentUser.getUsername() + "!");
         }
     }
 
@@ -102,6 +130,7 @@ public class PixelyController {
                 (String) userData.get("birth_date")
         );
     }
+
     private void loadGames() {
         games.clear();
         games.addAll(Arrays.asList(GameLibrary.getAvailableGames()));
@@ -141,13 +170,11 @@ public class PixelyController {
                 if (imageStream != null) {
                     imageView.setImage(new Image(imageStream));
                 } else {
-                    // Try to load a game-specific image directly if the path from DB fails
                     String fallbackPath = "/pictures/" + game.getName().replace(" ", "_") + "_game.jpg";
                     InputStream fallbackStream = getClass().getResourceAsStream(fallbackPath);
                     if (fallbackStream != null) {
                         imageView.setImage(new Image(fallbackStream));
                     } else {
-                        // Try with png if jpg not found
                         fallbackPath = "/pictures/" + game.getName().replace(" ", "_") + "_game.png";
                         fallbackStream = getClass().getResourceAsStream(fallbackPath);
                         if (fallbackStream != null) {
@@ -190,23 +217,17 @@ public class PixelyController {
         try {
             Class<? extends javafx.application.Application> gameClass = game.getGameClass();
             if (gameClass != null) {
-                // Create a new thread to launch the game instead of using Application.launch()
                 Thread gameThread = new Thread(() -> {
                     try {
-                        // Create an instance of the game application
                         javafx.application.Application gameApp = gameClass.getDeclaredConstructor().newInstance();
-
-                        // Run the game in a new stage
                         Platform.runLater(() -> {
                             try {
                                 Stage gameStage = new Stage();
                                 gameStage.setTitle(game.getName());
-
-                                // Call the start method manually
                                 gameApp.start(gameStage);
-
-                                // Show the stage
                                 gameStage.show();
+                                // Apply theme
+                                ThemeUtil.applyTheme(gameStage.getScene());
                             } catch (Exception ex) {
                                 Platform.runLater(() -> showError("Error", "Failed to launch game: " + ex.getMessage()));
                             }
@@ -215,7 +236,6 @@ public class PixelyController {
                         Platform.runLater(() -> showError("Error", "Failed to initialize game: " + ex.getMessage()));
                     }
                 });
-
                 gameThread.setDaemon(true);
                 gameThread.start();
             } else {
@@ -232,15 +252,15 @@ public class PixelyController {
             showError("Error", "Please log in to view users directory.");
             return;
         }
-
         try {
-            // Use getResource() with the correct path
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/UserDirectory.fxml"));
+            loader.setResources(ResourceBundle.getBundle("lang.strings", SettingsManager.getInstance().getLocale()));
             Parent root = loader.load();
-
             Stage stage = new Stage();
             stage.setTitle("Users Directory");
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+            ThemeUtil.applyTheme(scene);
+            stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
             showError("Error", "Failed to open users directory: " + e.getMessage());
@@ -257,8 +277,12 @@ public class PixelyController {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PixelySettings.fxml"));
+            loader.setResources(ResourceBundle.getBundle("lang.strings", SettingsManager.getInstance().getLocale()));
+            Parent root = loader.load();
             Stage stage = new Stage();
-            stage.setScene(new Scene(loader.load()));
+            Scene scene = new Scene(root);
+            ThemeUtil.applyTheme(scene);
+            stage.setScene(scene);
             stage.setTitle("Settings");
             stage.initModality(Modality.APPLICATION_MODAL);
 
@@ -282,8 +306,12 @@ public class PixelyController {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/UserProfile.fxml"));
+            loader.setResources(ResourceBundle.getBundle("lang.strings", SettingsManager.getInstance().getLocale()));
+            Parent root = loader.load();
             Stage stage = new Stage();
-            stage.setScene(new Scene(loader.load()));
+            Scene scene = new Scene(root);
+            ThemeUtil.applyTheme(scene);
+            stage.setScene(scene);
             stage.setTitle("User Profile");
             stage.initModality(Modality.APPLICATION_MODAL);
 
@@ -291,7 +319,6 @@ public class PixelyController {
             controller.setUser(currentUser);
             stage.showAndWait();
 
-            // Play sound when profile is opened (using the existing Sound_Func)
             Sound_Func.playProfileOpenedSound();
         } catch (IOException e) {
             showError("Error", "Failed to open profile: " + e.getMessage());
@@ -300,14 +327,16 @@ public class PixelyController {
 
     @FXML
     public void logout() {
-        // Stop background music when logging out
         Sound_Func.stopBackgroundMusic();
-
         currentUser = null;
         try {
             Stage currentStage = (Stage) logoutButton.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/loginview.fxml"));
-            currentStage.setScene(new Scene(loader.load()));
+            loader.setResources(ResourceBundle.getBundle("lang.strings", SettingsManager.getInstance().getLocale()));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            ThemeUtil.applyTheme(scene);
+            currentStage.setScene(scene);
             currentStage.setTitle("Pixely Login");
         } catch (IOException e) {
             showError("Error", "Failed to logout: " + e.getMessage());
@@ -316,7 +345,6 @@ public class PixelyController {
 
     @FXML
     public void exit() {
-        // Ensure background music is stopped when exiting
         Sound_Func.stopBackgroundMusic();
         Platform.exit();
     }

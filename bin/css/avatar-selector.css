@@ -1,0 +1,86 @@
+/* Avatar Selector Dialog Styles */
+.root {
+    -fx-background-color: #f5f7fa;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.dialog-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-padding: 15 0 10 0;
+}
+
+.avatar-grid {
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+    -fx-padding: 20;
+    -fx-alignment: center;
+}
+
+.avatar-cell {
+    -fx-padding: 10;
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);
+}
+
+.avatar-cell:hover {
+    -fx-background-color: #f0f2f5;
+    -fx-border-color: #6a11cb;
+    -fx-effect: dropshadow(gaussian, rgba(106,17,203,0.2), 8, 0, 0, 2);
+}
+
+.avatar-cell.selected {
+    -fx-background-color: #f0f7ff;
+    -fx-border-color: #6a11cb;
+    -fx-border-width: 2;
+}
+
+.avatar-image {
+    -fx-fit-width: 80;
+    -fx-fit-height: 80;
+    -fx-preserve-ratio: true;
+}
+
+.button-container {
+    -fx-spacing: 15;
+    -fx-alignment: center;
+    -fx-padding: 20 0;
+}
+
+.confirm-button {
+    -fx-background-color: linear-gradient(to right, #6a11cb, #2575fc);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 25;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+
+.confirm-button:hover {
+    -fx-background-color: linear-gradient(to right, #5a0cb0, #1a65eb);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 3);
+}
+
+.cancel-button {
+    -fx-background-color: white;
+    -fx-text-fill: #6a11cb;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 25;
+    -fx-background-radius: 20;
+    -fx-border-color: #6a11cb;
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+}
+
+.cancel-button:hover {
+    -fx-background-color: rgba(106, 17, 203, 0.05);
+    -fx-effect: dropshadow(gaussian, rgba(106, 17, 203, 0.2), 5, 0, 0, 2);
+}

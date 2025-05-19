@@ -1,0 +1,41 @@
+/* Light Theme */
+
+.root {
+    -fx-background-color: #ffffff;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.label, .text {
+    -fx-text-fill: #333333;
+}
+
+.button {
+    -fx-background-color: #d7e8ff;
+    -fx-text-fill: #00529b;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}
+
+.button:hover {
+    -fx-background-color: #b3d4fc;
+}
+
+.text-field, .combo-box, .password-field {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #b7c9e2;
+    -fx-border-radius: 5;
+    -fx-padding: 4 8 4 8;
+}
+
+.menu-bar, .menu {
+    -fx-background-color: #e8f0fe;
+}
+
+.grid-pane, .vbox, .hbox, .border-pane {
+    -fx-background-color: transparent;
+}
+
+.table-view {
+    -fx-background-color: #f7f9fa;
+    -fx-table-cell-border-color: #dbeafe;
+}

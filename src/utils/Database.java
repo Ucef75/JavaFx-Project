@@ -194,11 +194,34 @@ public class Database {
         }
     }
     /**
+     * Updates a user's password in the database
+     * @param username The username of the user whose password is being changed
+     * @param newPassword The new password to set
+     * @return true if the update was successful, false otherwise
+     */
+    public static boolean updateUserPassword(String username, String newPassword) {
+        String sql = "UPDATE Users SET password = ? WHERE username = ?";
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, newPassword);
+            pstmt.setString(2, username);
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error updating password: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+    /**
      * Loads all usernames and countries from the database
      * @return List of user data maps containing only username and country
      */
+    // Update the method to fetch avatar_path as well
     public static List<Map<String, String>> loadAllUsersBasicInfo() {
-        String sql = "SELECT username, country FROM Users ORDER BY username ASC";
+        String sql = "SELECT username, country, avatar_path FROM Users ORDER BY username ASC";
         List<Map<String, String>> users = new ArrayList<>();
 
         try (Connection conn = connect();
@@ -209,6 +232,7 @@ public class Database {
                 Map<String, String> userData = new HashMap<>();
                 userData.put("username", rs.getString("username"));
                 userData.put("country", rs.getString("country"));
+                userData.put("avatar_path", rs.getString("avatar_path")); // <--- Add this line
                 users.add(userData);
             }
         } catch (SQLException e) {
@@ -218,7 +242,6 @@ public class Database {
 
         return users;
     }
-
     public static boolean isDriverAvailable() {
         try {
             Class.forName("org.sqlite.JDBC");
@@ -227,4 +250,5 @@ public class Database {
             return false;
         }
     }
+
 }

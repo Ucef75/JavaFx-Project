@@ -42,15 +42,15 @@ public class UserDirectoryController {
 
         if (usersData != null) {
             for (Map<String, String> userData : usersData) {
-                // Create simplified user object with just username and country
                 User user = new User(
-                        0, // dummy ID since we don't need it
+                        0,
                         userData.get("username"),
-                        "", // no password
+                        "",
                         userData.get("country"),
-                        "", // no created_at
-                        ""  // no birth_date
+                        "",
+                        ""
                 );
+                user.setAvatarPath(userData.get("avatar_path")); // <- Fix applied here
                 users.add(user);
             }
         }

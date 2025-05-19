@@ -36,4 +36,5 @@ public class User {
     public void setCreated(String created) { this.created = created; }
     public void setBirthdate(String birthdate) { this.birthdate = birthdate; }
     public void setAvatarPath(String avatarPath) { this.avatarPath = avatarPath; }
+
 }

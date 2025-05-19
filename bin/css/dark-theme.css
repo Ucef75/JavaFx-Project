@@ -1,0 +1,42 @@
+/* Dark Theme */
+
+.root {
+    -fx-background-color: #181a1b;
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.label, .text {
+    -fx-text-fill: #f5f6fa;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to right, #232526, #414345);
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #414345, #232526);
+}
+
+.text-field, .combo-box, .password-field {
+    -fx-background-color: #232526;
+    -fx-text-fill: #f5f6fa;
+    -fx-border-color: #393e46;
+    -fx-border-radius: 5;
+    -fx-padding: 4 8 4 8;
+}
+
+.menu-bar, .menu {
+    -fx-background-color: #232526;
+}
+
+.grid-pane, .vbox, .hbox, .border-pane {
+    -fx-background-color: transparent;
+}
+
+.table-view {
+    -fx-background-color: #232526;
+    -fx-table-cell-border-color: #393e46;
+}
